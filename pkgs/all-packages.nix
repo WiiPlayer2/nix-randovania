@@ -1,6 +1,6 @@
-final: prev: let
+final: prev:
+let
   callPackage = final.callPackage or (prev.lib.callPackageWith (prev // packages));
-
   packages = rec {
     python3 = prev.python3.override {
       self = python3;
