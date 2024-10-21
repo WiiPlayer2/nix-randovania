@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
@@ -13,6 +13,7 @@
       imports = [
         ./pkgs
         ./dev
+        ./lib
       ];
 
       systems = [
