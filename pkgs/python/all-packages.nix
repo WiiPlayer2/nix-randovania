@@ -1,7 +1,15 @@
-final: prev: with final; {
-  json-delta = callPackage ./json-delta.nix;
-  ips = callPackage ./ips.nix;
-  mercury-engine-data-structures = callPackage ./mercury-engine-data-structures.nix;
-  open-dread-rando = callPackage ./open-dread-rando.nix;
-  randovania-lupa = callPackage ./randovania-lupa.nix;
-}
+final: prev:
+let
+  modules = [
+    "json-delta"
+    "ips"
+    "mercury-engine-data-structures"
+    "open-dread-rando"
+    "randovania-lupa"
+  ];
+  mapModule = module: {
+    name = module;
+    value = final.callPackage ./${module}.nix {};
+  };
+in
+builtins.listToAttrs (builtins.map mapModule modules)
