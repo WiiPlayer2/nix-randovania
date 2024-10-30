@@ -7,6 +7,17 @@
 , dulwich
 , pyqt-distutils
 , randovania-scm-version-schema
+, open-dread-rando
+, python-slugify
+, bitstruct
+, cryptography
+, networkx
+, tenacity
+, python-socketio
+, aiohttp
+, aiofiles
+, frozendict
+, sentry-sdk
 }:
 
 buildPythonPackage rec {
@@ -33,5 +44,16 @@ buildPythonPackage rec {
     dulwich
     pyqt-distutils
     randovania-scm-version-schema
+    open-dread-rando
+    python-slugify
+    bitstruct
+    cryptography
+    networkx
+    tenacity
+    python-socketio
+    aiohttp
+    aiofiles
+    frozendict
+    sentry-sdk
   ];
 }
