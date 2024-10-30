@@ -7,7 +7,7 @@
     devShells.default = pkgs.mkShell {
       packages = [
         (config.packages.python3.withPackages (pypi: with pypi; [
-          open-dread-rando
+          randovania
         ]))
       ];
     };
